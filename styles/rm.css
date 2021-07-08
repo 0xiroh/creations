@@ -1,6 +1,8 @@
 .tarjeta {
-    background-color: blue;
     width: 500px;
     height: 500px;
+}
 
+.tarjeta img {
+    width: 50%;
 }

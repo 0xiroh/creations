@@ -8,25 +8,25 @@ function usarApi(url){
     })
     .then(data => {
         console.log(data);
-        console.log(data.results.length);
-        const aleatorio = getRandomInt(data.results.length)
-        renderizarTarjeta(data, aleatorio);
+        renderizarTarjeta(data);
 
     })
 }
 
-function renderizarTarjeta(datos, n){
+function renderizarTarjeta(datos){
     const img = document.querySelector(".tarjeta img");
-    const nombre = datos.results[n].name;
-    const url = datos.results[n].image;
-    tarjeta.innerHTML = `<img src="${url}"><h1>${nombre}</h1>`;
+    const nombre = datos.name;
+    const especie = datos.species;
+    const estado = datos.status;
+    const url = datos.image;
+    tarjeta.innerHTML = `<img src="${url}"><h1>${nombre}</h1><h2>${especie}</h2><h2>${estado}</h2>`;
     
     
 }
 
 function urlAleatoria(){
-    const aleatPage = getRandomInt(34)
-    apiUrl = "https://rickandmortyapi.com/api/character?page=" + aleatPage;
+    const aleatId = getRandomInt(671)
+    apiUrl = "https://rickandmortyapi.com/api/character/" + aleatId;
     return apiUrl;
 }
 
