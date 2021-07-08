@@ -8,6 +8,7 @@ function usarApi(){
     })
     .then(data => {
         console.log(data);
+        console.log(data.info.count);
         const aleatorio = getRandomInt(data.results.length)
         renderizarTarjeta(data, aleatorio);
 
